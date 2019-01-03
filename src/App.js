@@ -43,8 +43,8 @@ class App extends Component {
          
        })
      }
-     removeItemFromBasket(cameraId) {
-      const camera = this.stat.cameras.filter(camera => camera.id !== cameraId)
+     removeItemFromBasket(Id) {
+      const camera = this.state.cameras.filter(camera => camera.id !== Id)
       this.setState({ camera })
       }
 
@@ -60,7 +60,7 @@ class App extends Component {
           />
 
        <SearchBar CameraSearch={this.CameraSearch} />
-       <Cart CartItems={this.state.CartItems} camera={this.removeItemFromBasket}/>
+       <Cart CartItems={this.state.CartItems} camera={this.state.removeItemFromBasket}/>
        
        <Footer />
 

@@ -16,7 +16,7 @@ class CartItems extends Component{
                  
                  <CardTitle className="otherText">{this.props.newCamera.name}</CardTitle>
                 
-                 <button onClick={this.props.removeItemFromBasket}>remove</button>
+                 
              </Card>
                 
             </div> 

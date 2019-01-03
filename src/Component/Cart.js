@@ -35,7 +35,7 @@ class Cart extends Component{
                     return tax + camera.price * 1.086
                 },0).toFixed(2) }</h4>             
                 
-                
+            <button onClick={this.props.removeItemFromBasket}>remove</button>
                
                 
                 

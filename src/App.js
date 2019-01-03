@@ -1,25 +1,60 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Navbars from './Component/Navbars.js';
+import CameraList from './Component/CameraList.js';
+import SearchBar from './Component/SearchBar.js';
+import Footer from './Component/Footer'
+import Cart from './Component/Cart'
 import './App.css';
 
 class App extends Component {
+  state = {
+    CartItems: [],
+    cameras: [],
+    total: 0,
+    filterCameras: ''
+  }
+   async componentDidMount (){
+     const res = await fetch('http://localhost:8082/api/cameras')
+     const json = await res.json()
+     this.setState({cameras: json})
+     console.log(json)
+     
+   }
+   CameraSearch = (e) => {
+     this.setState ({
+       filterCameras: e.target.value
+       
+     })
+    }
+     addCamera = (id) => {
+       const singleCamera = this.state.cameras.filter(camera => camera.id === id)
+       console.log(singleCamera)
+       this.setState(prevState => {
+         let CartItems = this.state.CartItems
+         for(let i = 0; i < this.state.cameras.length; i++){
+           if(this.state.cameras[i].id === id){
+             CartItems.push(this.state.cameras[i])
+           }
+         }
+         return {CartItems};
+       })
+     }
+    
+     
+   
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Navbars />
+        <CameraList cameras={this.state.cameras.filter(camera => camera.name.includes(this.state.filterCameras))}
+          addCamera={this.addCamera}
+          />
+
+       <SearchBar CameraSearch={this.CameraSearch} />
+       <Cart CartItems={this.state.CartItems}/>
+       <Footer />
+
+       
       </div>
     );
   }

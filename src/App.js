@@ -6,6 +6,7 @@ import Footer from './Component/Footer'
 import Cart from './Component/Cart'
 import './App.css';
 
+
 class App extends Component {
   state = {
     CartItems: [],
@@ -37,6 +38,7 @@ class App extends Component {
            }
          }
          return {CartItems};
+         
        })
      }
     
@@ -52,6 +54,7 @@ class App extends Component {
 
        <SearchBar CameraSearch={this.CameraSearch} />
        <Cart CartItems={this.state.CartItems}/>
+       
        <Footer />
 
        

@@ -17,10 +17,10 @@ class Cart extends Component{
         {newCamera}
                 <h2>{this.props.CartItems.reduce((sum,camera)=>{
                     return sum + camera.price
-                },0)}
+                },null)}
                </h2>
         </CardBody>
-        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+        <CardText></CardText>
         <Button color="secondary">Button</Button>
       </Card>
                

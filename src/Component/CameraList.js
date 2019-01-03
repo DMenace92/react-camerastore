@@ -17,7 +17,7 @@ class CameraList extends Component{
                         <CardTitle>price ${camera.price}</CardTitle>
                         <CardImg src={camera.picture} />
                         <CardTitle>{camera.rating}</CardTitle>
-                        <Button color='primary'>Add to Cart</Button >
+                        <Button onClick={()=> this.props.addCamera(camera.id)} color='primary'>Add to Cart</Button >
                     </Card>
                 </div>
                 )}

@@ -10,31 +10,33 @@ class Cart extends Component{
     
         console.log(this.props.CartItems)
         const newCamera = this.props.CartItems.map(camera=> <CartItems key={camera.id} newCamera={camera}/>)
+       
         
+      
         return(
             
             <div>
           
             <Card className="CardBody" body inverse color="warning">
-        <CardTitle>Your Cart</CardTitle>
+        <CardTitle className='CartText'>Your Cart</CardTitle>
         <CardBody>
         
         
         {newCamera}
-         <h6>subtotal: {this.props.CartItems.reduce((sum,camera)=>{
+         <h6>Subtotal: ${this.props.CartItems.reduce((sum,camera)=>{
                     return sum + camera.price 
-                },0) }</h6>
+                },0).toFixed(2) }</h6>
         
-         <h6>tax: {this.props.CartItems.reduce((tax,camera)=>{
+         <h6>Tax: ${this.props.CartItems.reduce((tax,camera)=>{
                     return tax + camera.price * 0.086
-                },0) }</h6>      
+                },0).toFixed(2)}</h6>      
 
-         <h6>total: {this.props.CartItems.reduce((tax,camera)=>{
+         <h4>Total: ${this.props.CartItems.reduce((tax,camera)=>{
                     return tax + camera.price * 1.086
-                },0) }</h6>             
+                },0).toFixed(2) }</h4>             
                 
                 
-                
+               
                 
                 
                 

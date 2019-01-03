@@ -12,7 +12,7 @@
   font-size: 20px;
   border: 1px solid white;
   width: 50vw;
-  height:5.5vh;
+  height:4.8vh;
 }
 .search{
   position: absolute;
@@ -37,4 +37,8 @@
 }
 .newText{
   color:black;
+}
+.CartText{
+  font-size:30px;
+  text-align: center;
 }

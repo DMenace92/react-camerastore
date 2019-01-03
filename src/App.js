@@ -31,16 +31,23 @@ class App extends Component {
        const singleCamera = this.state.cameras.filter(camera => camera.id === id)
        console.log(singleCamera)
        this.setState(prevState => {
+         console.log(prevState)
          let CartItems = this.state.CartItems
          for(let i = 0; i < this.state.cameras.length; i++){
            if(this.state.cameras[i].id === id){
              CartItems.push(this.state.cameras[i])
+          
            }
          }
          return {CartItems};
          
        })
      }
+     removeItemFromBasket(cameraId) {
+      const camera = this.stat.cameras.filter(camera => camera.id !== cameraId)
+      this.setState({ camera })
+      }
+
     
      
    
@@ -53,7 +60,7 @@ class App extends Component {
           />
 
        <SearchBar CameraSearch={this.CameraSearch} />
-       <Cart CartItems={this.state.CartItems}/>
+       <Cart CartItems={this.state.CartItems} camera={this.removeItemFromBasket}/>
        
        <Footer />
 

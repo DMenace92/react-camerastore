@@ -1,11 +1,13 @@
 
 .container{
-  border: 1px soild black;
-  height:86.5vh;
+  overflow-y:scroll; 
+  height:83vh;
+  width:32vw !important;
   /* margin:5vh; */
   position: absolute;
-  top:10.3vh;
-  overflow-y:scroll;
+  left:-10px;
+  top:12vh;
+  
 }
 .inputSearch{
   font-style: bold;
@@ -16,7 +18,6 @@
 }
 .search{
   position: absolute;
-  
   top:58px;
   left:20px;
 }
@@ -27,9 +28,9 @@
 }
 .CardBody{
   position: absolute;
-  margin: 1%;
-  left: 78%;
-  width:20vw;
+  margin: 2%;
+  left: 66%;
+  width:30vw;
   
 }
 .otherText{
@@ -41,4 +42,10 @@
 .CartText{
   font-size:30px;
   text-align: center;
+}
+/* .imgBody{
+  width:30vw;
+} */
+.cards{
+  width:30vw;
 }

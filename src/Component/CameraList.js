@@ -6,13 +6,13 @@ class CameraList extends Component{
     render(){
         
         return(
-            
+            <div className="mainDiv">
             <div className='container'>
                 
                 {this.props.cameras.map(camera =>
                 <div className="cards">
                     
-                    <Card key={camera.id} value={camera.id}>
+                    <Card className="imgBody"key={camera.id} value={camera.id}>
                         <CardTitle>{camera.name}</CardTitle>
                         <CardTitle>price ${camera.price}</CardTitle>
                         <CardImg src={camera.picture} />
@@ -22,6 +22,7 @@ class CameraList extends Component{
                 </div>
                 )}
                 
+            </div>
             </div>
         )
     }

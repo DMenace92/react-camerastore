@@ -36,17 +36,25 @@ class App extends Component {
          for(let i = 0; i < this.state.cameras.length; i++){
            if(this.state.cameras[i].id === id){
              CartItems.push(this.state.cameras[i])
-          
            }
          }
          return {CartItems};
-         
        })
      }
-     removeItemFromBasket(Id) {
-      const camera = this.state.cameras.filter(camera => camera.id !== Id)
-      this.setState({ camera })
-      }
+     removeItem = (id) => {
+       this.setState(prevState => {
+        console.log(prevState)
+       let CartItems = this.state.CartItems
+     
+       if(this.state.cameras.id !== id){
+         CartItems.splice(this.state.cameras)
+       }
+      return {CartItems}
+    })
+     }
+    
+    
+    
 
     
      
@@ -60,7 +68,7 @@ class App extends Component {
           />
 
        <SearchBar CameraSearch={this.CameraSearch} />
-       <Cart CartItems={this.state.CartItems} camera={this.state.removeItemFromBasket}/>
+       <Cart CartItems={this.state.CartItems} removeItem={this.removeItem} />
        
        <Footer />
 

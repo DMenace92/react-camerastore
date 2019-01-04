@@ -11,7 +11,8 @@ class Cart extends Component{
         console.log(this.props.CartItems)
         const newCamera = this.props.CartItems.map(camera=> <CartItems key={camera.id} newCamera={camera}/>)
        
-        
+    //    console.log(this.props)
+//  this.props.removeItem()
       
         return(
             
@@ -35,8 +36,7 @@ class Cart extends Component{
                     return tax + camera.price * 1.086
                 },0).toFixed(2) }</h4>             
                 
-            <button onClick={this.props.removeItemFromBasket}>remove</button>
-               
+ <button onClick={this.props.removeItem}>remove</button>               
                 
                 
                 

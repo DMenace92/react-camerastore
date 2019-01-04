@@ -5,6 +5,7 @@ import SearchBar from './Component/SearchBar.js';
 import Footer from './Component/Footer'
 import Cart from './Component/Cart'
 import './App.css';
+// import axios from 'axios'
 
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
      const json = await res.json()
      this.setState({cameras: json})
      console.log(json)
+     console.log(this.state.CartItems)
      
    }
    CameraSearch = (e) => {
@@ -28,7 +30,8 @@ class App extends Component {
      })
     }
      addCamera = (id) => {
-       const singleCamera = this.state.cameras.filter(camera => camera.id === id)
+       const singleCamera = this.state.cameras.filter(camera => camera.id)
+      //  if(this.state.cameras.inCart === true)
        console.log(singleCamera)
        this.setState(prevState => {
          console.log(prevState)
@@ -41,6 +44,9 @@ class App extends Component {
          return {CartItems};
        })
      }
+
+   
+
      removeItem = (id) => {
        this.setState(prevState => {
         console.log(prevState)
@@ -66,7 +72,7 @@ class App extends Component {
         <CameraList cameras={this.state.cameras.filter(camera => camera.name.includes(this.state.filterCameras))}
           addCamera={this.addCamera}
           />
-
+        
        <SearchBar CameraSearch={this.CameraSearch} />
        <Cart CartItems={this.state.CartItems} removeItem={this.removeItem} />
        

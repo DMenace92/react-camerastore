@@ -6,7 +6,7 @@ class CameraList extends Component{
     render(){
         
         return(
-            <div className="mainDiv">
+            
             <div className='container'>
                 
                 {this.props.cameras.map(camera =>
@@ -23,7 +23,7 @@ class CameraList extends Component{
                 )}
                 
             </div>
-            </div>
+            
         )
     }
 }

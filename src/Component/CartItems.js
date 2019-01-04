@@ -7,7 +7,10 @@ import { Card, CardTitle} from 'reactstrap';
 
 import "../App.css"
 class CartItems extends Component{
+
+    
     render(){
+        
         return(
             
              <div>
@@ -15,7 +18,7 @@ class CartItems extends Component{
              <Card>
                  
                  <CardTitle className="otherText">{this.props.newCamera.name}</CardTitle>
-                
+
                  
              </Card>
                 

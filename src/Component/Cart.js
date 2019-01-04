@@ -6,18 +6,22 @@ import "../App.css"
 
 class Cart extends Component{
     render(){
+       
       
     
         console.log(this.props.CartItems)
         const newCamera = this.props.CartItems.map(camera=> <CartItems key={camera.id} newCamera={camera}/>)
-       
     //    console.log(this.props)
 //  this.props.removeItem()
-      
+
+
         return(
             
+            
+
             <div>
-          
+            
+
             <Card className="CardBody" body inverse color="warning">
         <CardTitle className='CartText'>Your Cart</CardTitle>
         <CardBody>
